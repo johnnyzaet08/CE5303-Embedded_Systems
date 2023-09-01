@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Control Panel</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>House Control Panel</h1>
+  
+  <div class="button-row">
+    <button class="button">
+      <svg class="bulb" width="16" height="16" viewBox="0 0 16 16">
+        <circle cx="8" cy="8" r="6"/>
+      </svg>
+      Light Bulb 1
+    </button>
+    <button class="button">
+      <svg class="bulb" width="16" height="16" viewBox="0 0 16 16">
+        <circle cx="8" cy="8" r="6"/>
+      </svg>
+      Light Bulb 2
+    </button>
+    <button class="button">
+      <svg class="bulb" width="16" height="16" viewBox="0 0 16 16">
+        <circle cx="8" cy="8" r="6"/>
+      </svg>
+      Light Bulb 3
+    </button>
+    <button class="button">
+      <svg class="bulb" width="16" height="16" viewBox="0 0 16 16">
+        <circle cx="8" cy="8" r="6"/>
+      </svg>
+      Light Bulb 4
+    </button>
+    <button class="button">
+      <svg class="bulb" width="16" height="16" viewBox="0 0 16 16">
+        <circle cx="8" cy="8" r="6"/>
+      </svg>
+      Light Bulb 5
+    </button>
+  </div>
+
+  <svg id="house" viewBox="0 0 300 300">
+    <rect x="50" y="100" width="200" height="150" fill="gray" />
+    <circle cx="100" cy="120" r="5" fill="yellow" />
+    <rect x="90" y="200" width="40" height="50" fill="brown" />
+  </svg>
+
+  <div class="button-row">
+    <button class="button" id="take-photo">Take Photo</button>
+  </div>
+
+  <div class="photo-container" id="photo-container">
+
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
