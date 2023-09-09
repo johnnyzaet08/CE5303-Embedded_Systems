@@ -42,8 +42,18 @@
     </button>
   </div>
 
-  <svg id="house" viewBox="0 0 300 300">
-    <rect x="50" y="100" width="200" height="150" fill="gray" />
+  <div class="button-row">
+    <button class="button">
+      Off all Lights
+    </button>
+    <button class="button">
+      On all Lights
+    </button>
+  </div>
+
+    
+  <svg class="house-container">
+    <image x="0" y="0" width="800" height="600" xlink:href="{{ url_for('static', filename='HouseImage.jpg') }}" />
     <circle cx="100" cy="120" r="5" fill="yellow" />
     <rect x="90" y="200" width="40" height="50" fill="brown" />
   </svg>
