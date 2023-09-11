@@ -1,0 +1,70 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  grid-column: 1rem;
+  align-items: center;
+  background-color: #08071021;
+  margin-top: 2rem;
+}
+
+body * {
+  color: black;
+  letter-spacing: 0.5px;
+  outline: none;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 1rem;
+  border-radius: 20px;
+}
+
+.button:hover {
+  background-color: #1d8af7;
+  color: whitesmoke;
+}
+
+.bulb {
+  fill: transparent;
+}
+
+.bulb.active {
+  fill: yellow;
+}
+
+.door {
+  fill: brown;
+}
+
+.door.active {
+  fill: white;
+}
+
+.house-container {
+  width: 800px;
+  height: 600px;
+}
+
+.photo-container {
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
