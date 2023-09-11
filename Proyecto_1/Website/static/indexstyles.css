@@ -1,15 +1,26 @@
+/* styles.css */
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
   grid-column: 1rem;
   align-items: center;
+  background-color: #08071021;
+  margin-top: 2rem;
+}
+
+body * {
+  color: black;
+  letter-spacing: 0.5px;
+  outline: none;
 }
 
 .button-row {
   display: flex;
   gap: 10px;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .button {
@@ -24,15 +35,15 @@ body {
 }
 
 .button:hover {
-  background-color: #3498ff;
-  color: gray;
+  background-color: #1d8af7;
+  color: whitesmoke;
 }
 
 .bulb {
-  fill: white;
+  fill: transparent;
 }
 
-.button.active .bulb{
+.bulb.active {
   fill: yellow;
 }
 
@@ -40,17 +51,20 @@ body {
   fill: brown;
 }
 
-.button.active .door {
+.door.active {
   fill: white;
 }
 
 .house-container {
-  fill: aqua;
   width: 800px;
   height: 600px;
 }
 
 .photo-container {
-  margin-top: 20px;
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 

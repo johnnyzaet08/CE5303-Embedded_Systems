@@ -4,58 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>House Control Panel</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='indexstyles.css') }}">
 </head>
 <body>
+
   <h1>House Control Panel</h1>
   
   <div class="button-row">
-    <button class="button">
-      <svg class="bulb" width="16" height="16" viewBox="0 0 16 16">
-        <circle cx="8" cy="8" r="6"/>
+    <button id="LivingLight" class="button">
+      <svg width="16" height="16" viewBox="0 0 16 16">
+        <circle id="LivingLightBulbButton" class="bulb" cx="8" cy="8" r="6"/>
       </svg>
-      Light Bulb 1
+      Living Light
     </button>
-    <button class="button">
-      <svg class="bulb" width="16" height="16" viewBox="0 0 16 16">
-        <circle cx="8" cy="8" r="6"/>
+    <button id="KitchenLight" class="button">
+      <svg width="16" height="16" viewBox="0 0 16 16">
+        <circle id="KitchenLightBulbButton" class="bulb" cx="8" cy="8" r="6"/>
       </svg>
-      Light Bulb 2
+      Kitchen Light
     </button>
-    <button class="button">
-      <svg class="bulb" width="16" height="16" viewBox="0 0 16 16">
-        <circle cx="8" cy="8" r="6"/>
+    <button id="Bedroom1Ligth" class="button">
+      <svg width="16" height="16" viewBox="0 0 16 16">
+        <circle id="Bedroom1LigthBulbButton" class="bulb" cx="8" cy="8" r="6"/>
       </svg>
-      Light Bulb 3
+      Bedroom 1 Light
     </button>
-    <button class="button">
-      <svg class="bulb" width="16" height="16" viewBox="0 0 16 16">
-        <circle cx="8" cy="8" r="6"/>
+    <button id="Bedroom2Ligth" class="button">
+      <svg width="16" height="16" viewBox="0 0 16 16">
+        <circle id="Bedroom2LigthBulbButton" class="bulb" cx="8" cy="8" r="6"/>
       </svg>
-      Light Bulb 4
+      Bedroom 2 Light
     </button>
-    <button class="button">
-      <svg class="bulb" width="16" height="16" viewBox="0 0 16 16">
-        <circle cx="8" cy="8" r="6"/>
+    <button id="BathLigth" class="button">
+      <svg width="16" height="16" viewBox="0 0 16 16">
+        <circle id="BathLigthBulbButton" class="bulb" cx="8" cy="8" r="6"/>
       </svg>
-      Light Bulb 5
+      Bathroom Light
     </button>
   </div>
 
   <div class="button-row">
-    <button class="button">
+    <button id="OffAllLights" class="button">
       Off all Lights
     </button>
-    <button class="button">
+    <button id="OnAllLights" class="button">
       On all Lights
     </button>
   </div>
 
     
   <svg class="house-container">
-    <image x="0" y="0" width="800" height="600" xlink:href="{{ url_for('static', filename='HouseImage.jpg') }}" />
-    <circle cx="100" cy="120" r="5" fill="yellow" />
-    <rect x="90" y="200" width="40" height="50" fill="brown" />
+    <image x="0" y="0" width="800" height="600" xlink:href="{{ url_for('static', filename='HouseImage.png') }}" />
+    <circle id="LivingLightBulb" class="bulb" cx="198" cy="160" r="13"  />\
+    <circle id="KitchenLightBulb" class="bulb" cx="510" cy="140" r="13"  />
+    <circle id="Bedroom1LigthBulb" class="bulb" cx="153" cy="433" r="13"  />
+    <circle id="Bedroom2LigthBulb" class="bulb" cx="543" cy="405" r="13"  />
+    <circle id="BathLigthBulb" class="bulb" cx="340" cy="455" r="13"  />
+    <rect id="MainDoor" class="door" x="31" y="246" width="13" height="44"/>
+    <rect id="Bedroom1Door" class="door" x="248" y="330" width="11" height="43"/>
+    <rect id="Bedroom2Door" class="door" x="589" y="259" width="41" height="12"/>
+    <rect id="BathDoor" class="door" x="317" y="378" width="41" height="10"/>
   </svg>
 
   <div class="button-row">
