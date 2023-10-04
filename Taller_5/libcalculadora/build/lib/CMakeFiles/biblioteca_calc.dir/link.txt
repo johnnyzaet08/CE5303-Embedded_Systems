@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared -Wl,-soname,libbiblioteca_calc.so -o libbiblioteca_calc.so CMakeFiles/biblioteca_calc.dir/biblioteca.c.o 
