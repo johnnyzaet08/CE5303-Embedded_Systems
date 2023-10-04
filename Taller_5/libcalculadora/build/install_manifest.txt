@@ -1,0 +1,3 @@
+/home/zaetlinux/cmake/libcalculadora/build/usr/bin/calculadora
+/home/zaetlinux/cmake/libcalculadora/build/usr/lib/libbiblioteca_calc.so
+/home/zaetlinux/cmake/libcalculadora/build/usr/include/biblioteca.h
