@@ -1,0 +1,1 @@
+savedcmd_/home/johnnyzaet/Desktop/CE5303-Embedded_Systems/Taller_8/memory_example/modules.order := {   echo /home/johnnyzaet/Desktop/CE5303-Embedded_Systems/Taller_8/memory_example/memory_32bit.o; :; } > /home/johnnyzaet/Desktop/CE5303-Embedded_Systems/Taller_8/memory_example/modules.order
