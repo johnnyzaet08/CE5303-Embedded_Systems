@@ -1,0 +1,1 @@
+savedcmd_/home/johnnyzaet/Desktop/CE5303-Embedded_Systems/Taller_8/hello_example/Module.symvers :=  scripts/mod/modpost -m       -o /home/johnnyzaet/Desktop/CE5303-Embedded_Systems/Taller_8/hello_example/Module.symvers -T /home/johnnyzaet/Desktop/CE5303-Embedded_Systems/Taller_8/hello_example/modules.order -i Module.symvers -e 
