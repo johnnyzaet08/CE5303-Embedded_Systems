@@ -105,9 +105,7 @@ int timer_release(struct inode *inode, struct file *file){
 }
 
 
-ssize_t timer_write(struct file *filp, char *buffer,
-
-size_t length, loff_t * offset){
+ssize_t timer_write(struct file *filp, char *buffer,size_t length, loff_t * offset){
 	printk("<1>Writing to timer module...\n");
 	u32 cmd;
 	if (buffer) {
@@ -134,8 +132,7 @@ size_t length, loff_t * offset){
 }
 
 
-ssize_t timer_read(struct file *filp, char *buffer,
-size_t length, loff_t * offset){
+ssize_t timer_read(struct file *filp, char *buffer, size_t length, loff_t * offset){
 	int index;
 	u32 res;
 	msg_Ptr = msg;
