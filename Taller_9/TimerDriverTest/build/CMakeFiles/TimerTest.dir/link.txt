@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/TimerTest.dir/src/main.c.o -o TimerTest  libTimerTestLib.a 

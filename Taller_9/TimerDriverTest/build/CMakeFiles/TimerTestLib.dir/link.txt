@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTimerTestLib.a CMakeFiles/TimerTestLib.dir/lib/timer_test_lib.c.o
+/usr/bin/ranlib libTimerTestLib.a
