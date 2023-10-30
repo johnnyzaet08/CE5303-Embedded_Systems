@@ -13,7 +13,7 @@ int main() {
     }
 
     // Write to the timer device
-    write_to_timer_device(fd, "Test", 4);
+    write_to_timer_device(fd, "1", 1);
 
     // Read from the timer device
     read_from_timer_device(fd, buffer, sizeof(buffer));
