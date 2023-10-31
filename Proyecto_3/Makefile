@@ -1,23 +1,21 @@
-# Nombre del ejecutable
-OUTPUT = my_program
-
-# Archivos fuente
-SOURCES = main.c mongoose.c
-
-# Archivos objeto
-OBJECTS = $(SOURCES:.c=.o)
-
-# Flags para el compilador
+# Variables
+CC = gcc
 CFLAGS = -Wall
+LDFLAGS = -lmicrohttpd
+TARGET =  main
+OBJECTS = main.o
 
-all: $(OUTPUT)
+# Reglas
+all: $(TARGET)
 
-$(OUTPUT): $(OBJECTS)
-	gcc $(CFLAGS) $(OBJECTS) -o $(OUTPUT)
+$(TARGET): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
 
 %.o: %.c
-	gcc $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS) $(OUTPUT)
+	rm -f $(OBJECTS) $(TARGET)
+
+.PHONY: all clean
 

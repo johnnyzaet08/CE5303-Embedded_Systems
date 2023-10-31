@@ -1,39 +1,37 @@
-#include "mongoose.h"
+#include <stdio.h>
+#include <string.h>
+#include <microhttpd.h>
 
-// Función para manejar las peticiones HTTP
-static void handle_request(struct mg_connection *nc, int ev, void *ev_data) {
-    struct http_message *hm = (struct http_message *) ev_data;
+#define PORT 8080
 
-    // Si la ruta es /applyFilter, procesamos la imagen
-    if (mg_vcmp(&hm->uri, "/applyFilter") == 0) {
-        // TODO: Aquí iría el código para obtener la imagen y el nombre del filtro de la petición,
-        // aplicar el filtro y devolver la imagen procesada.
-        
-        // Por ahora, solo devolvemos una respuesta de prueba
-        mg_printf(nc, "HTTP/1.1 200 OK\r\nContent-Length: %d\r\n\r\n%s",
-                  (int) strlen("Filter applied!"), "Filter applied!");
-    } else {
-        mg_printf(nc, "HTTP/1.1 404 Not Found\r\nContent-Length: %d\r\n\r\n%s",
-                  (int) strlen("Not Found"), "Not Found");
-    }
+static enum MHD_Result answer_to_connection(void *cls, struct MHD_Connection *connection,
+                                const char *url, const char *method,
+                                const char *version, const char *upload_data,
+                                size_t *upload_data_size, void **ptr) {
+    // Aquí se procesarán las peticiones HTTP.
+    // Por ahora, solo devolveremos un "Hello, World!".
+    printf("Hola1");
+    const char *page = "<html><body>Hello, World!</body></html>";
+    struct MHD_Response *response;
+    int ret;
+
+    response = MHD_create_response_from_buffer(strlen(page), (void *)page, MHD_RESPMEM_PERSISTENT);
+    ret = MHD_queue_response(connection, MHD_HTTP_OK, response);
+    MHD_destroy_response(response);
+
+    return ret;
 }
 
-int main(void) {
-    struct mg_mgr mgr;
-    struct mg_connection *nc;
+int main() {
+    struct MHD_Daemon *daemon;
 
-    mg_mgr_init(&mgr); // Corregido para tomar solo un argumento
-    nc = mg_bind(&mgr, "8080", handle_request);
+    daemon = MHD_start_daemon(MHD_USE_SELECT_INTERNALLY, PORT, NULL, NULL,
+                              &answer_to_connection, NULL, MHD_OPTION_END);
+    if (NULL == daemon) return 1;
 
-    // Configuramos las opciones del servidor HTTP
-    mg_set_protocol_http_websocket(nc);
+    getchar(); // Espera una tecla para terminar
 
-    printf("Starting web server on port 8080\n");
-    for (;;) {
-        mg_mgr_poll(&mgr, 1000);
-    }
-    mg_mgr_free(&mgr);
-
+    MHD_stop_daemon(daemon);
     return 0;
 }
 
